@@ -1,14 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckhymx2g1u8uo"]
+[gd_scene format=3 uid="uid://ckhymx2g1u8uo"]
 
 [ext_resource type="PackedScene" uid="uid://caqymajifpsch" path="res://scenes/arena.tscn" id="1_0cso3"]
 [ext_resource type="Script" uid="uid://bqv7hete88lhv" path="res://scripts/multiplayer_spawner.gd" id="3_2lpho"]
 [ext_resource type="PackedScene" uid="uid://6yhdtc6v8e8b" path="res://scenes/Vehicle.tscn" id="4_nakos"]
 
-[node name="map" type="Node3D"]
+[node name="map" type="Node3D" unique_id=1481075327]
 
-[node name="Node3D" parent="." instance=ExtResource("1_0cso3")]
+[node name="Node3D" parent="." unique_id=926391389 instance=ExtResource("1_0cso3")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -2.4338312, 0, 0.1937561)
 
-[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=1656923721]
+_spawnable_scenes = PackedStringArray("uid://6yhdtc6v8e8b")
+spawn_path = NodePath("../Node3D")
 script = ExtResource("3_2lpho")
 player_scene = ExtResource("4_nakos")
