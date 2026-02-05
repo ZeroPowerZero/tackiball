@@ -7,7 +7,7 @@
 [node name="map" type="Node3D"]
 
 [node name="Node3D" parent="." instance=ExtResource("1_0cso3")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -2.4338312, 0, 0.1937561)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -2.4338312, 0, 0.1937561)
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
 _spawnable_scenes = PackedStringArray("uid://6yhdtc6v8e8b")

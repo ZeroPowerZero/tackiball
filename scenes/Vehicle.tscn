@@ -1,8 +1,9 @@
-[gd_scene format=4 uid="uid://6yhdtc6v8e8b"]
+[gd_scene load_steps=18 format=4 uid="uid://6yhdtc6v8e8b"]
 
-[ext_resource type="Script" uid="uid://s3v7em1vu4se" path="res://scripts/vehicle.gd" id="1_g2lsg"]
+[ext_resource type="Script" uid="uid://s3v7em1vu4se" path="res://scripts/vehicle_scripts/vehicle.gd" id="1_g2lsg"]
 [ext_resource type="Texture2D" uid="uid://cbl6gi6a01h82" path="res://assests/GLB format/Textures/colormap.png" id="2_1lm87"]
 [ext_resource type="Script" uid="uid://gfyrb27ux56g" path="res://scripts/camera_spring_arm.gd" id="3_vujux"]
+[ext_resource type="Script" uid="uid://6jpecx6jcual" path="res://scripts/vehicle_scripts/set_vehicle_position.gd" id="4_vujux"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bm8bw"]
 resource_name = "colormap"
@@ -233,3 +234,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07489455, 0.9048952)
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=462971047]
 replication_config = SubResource("SceneReplicationConfig_ub8q0")
+
+[node name="SetPosition" type="Node3D" parent="."]
+script = ExtResource("4_vujux")
+metadata/_custom_type_script = "uid://6jpecx6jcual"

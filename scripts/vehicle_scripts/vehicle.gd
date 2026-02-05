@@ -1,7 +1,10 @@
-extends VehicleBody3D
+class_name vehicle extends VehicleBody3D
+
+@onready var set_position: SetPosition = $SetPosition
+
 
 @export var max_steer: float = 0.9
-@export var engine_power = 300
+@export var engine_power : float = 300
 
 
 func _enter_tree() -> void:
@@ -13,10 +16,15 @@ func _ready() -> void:
 		$SpringArm3D/Camera3D.current = true
 	else:
 		$SpringArm3D/Camera3D.current = false
+		
 	print("spanned vehicle")
 	
-
-
+	#if multiplayer.is_server():
+		#position = Vector3(0,1,18)
+	#else:
+		#position = Vector3(0,1,-18)
+		#rotation = Vector3(0,180,0)
+	set_position.set_pos()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
