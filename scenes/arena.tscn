@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://caqymajifpsch"]
+[gd_scene load_steps=12 format=3 uid="uid://caqymajifpsch"]
 
 [ext_resource type="ArrayMesh" uid="uid://b01bnby3341iw" path="res://assests/OBJ format/Map-RL project.obj" id="1_7ft05"]
 [ext_resource type="Texture2D" uid="uid://bcocgj6coe5bq" path="res://assests/Textures/Grass/Grass_diffuseOriginal.jpg" id="2_4ag8t"]
 [ext_resource type="Texture2D" uid="uid://byl6oi0cmn1mp" path="res://assests/Textures/Grass/Grass_ao.jpg" id="3_dpxgc"]
 [ext_resource type="Texture2D" uid="uid://boumjwvgxkrpj" path="res://assests/Textures/Grass/Grass_metallic.jpg" id="4_oexds"]
 [ext_resource type="Texture2D" uid="uid://ch12li581gjk7" path="res://assests/Textures/Grass/Grass_normal.jpg" id="5_naajo"]
+[ext_resource type="PackedScene" uid="uid://dol3ob50wvnfe" path="res://scenes/ball.tscn" id="6_4ag8t"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7ft05"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -48,3 +49,10 @@ shape = SubResource("ConcavePolygonShape3D_ya4ey")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_7ft05")
 surface_material_override/0 = SubResource("StandardMaterial3D_eb6dy")
+
+[node name="Ball" parent="." instance=ExtResource("6_4ag8t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1481075, 4.041397, -0.06801748)
+mass = 0.001
+gravity_scale = 0.2
+
+[editable path="Ball"]
