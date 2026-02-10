@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://4rvie7i6x2rd"
+path="res://.godot/imported/track-narrow-straight.obj-080dcf24fd13d7317e19e8afdf0b0466.mesh"
+
+[deps]
+
+files=["res://.godot/imported/track-narrow-straight.obj-080dcf24fd13d7317e19e8afdf0b0466.mesh"]
+
+source_file="res://assests/OBJ format/track-narrow-straight.obj"
+dest_files=["res://.godot/imported/track-narrow-straight.obj-080dcf24fd13d7317e19e8afdf0b0466.mesh", "res://.godot/imported/track-narrow-straight.obj-080dcf24fd13d7317e19e8afdf0b0466.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

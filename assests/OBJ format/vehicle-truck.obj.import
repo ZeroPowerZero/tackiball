@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dgoutuijn6dqv"
+path="res://.godot/imported/vehicle-truck.obj-27f593c282d9dd3ac0f10fe28ccdfbfc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/vehicle-truck.obj-27f593c282d9dd3ac0f10fe28ccdfbfc.mesh"]
+
+source_file="res://assests/OBJ format/vehicle-truck.obj"
+dest_files=["res://.godot/imported/vehicle-truck.obj-27f593c282d9dd3ac0f10fe28ccdfbfc.mesh", "res://.godot/imported/vehicle-truck.obj-27f593c282d9dd3ac0f10fe28ccdfbfc.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dkhtmkny3gwc1"
+path="res://.godot/imported/track-wide-cap-front.obj-83575dc9cd89980c506d7d7a80a15327.mesh"
+
+[deps]
+
+files=["res://.godot/imported/track-wide-cap-front.obj-83575dc9cd89980c506d7d7a80a15327.mesh"]
+
+source_file="res://assests/OBJ format/track-wide-cap-front.obj"
+dest_files=["res://.godot/imported/track-wide-cap-front.obj-83575dc9cd89980c506d7d7a80a15327.mesh", "res://.godot/imported/track-wide-cap-front.obj-83575dc9cd89980c506d7d7a80a15327.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

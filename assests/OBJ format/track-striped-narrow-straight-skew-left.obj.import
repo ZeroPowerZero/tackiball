@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bv8kyw7lolp7x"
+path="res://.godot/imported/track-striped-narrow-straight-skew-left.obj-fccbfea2ce787a8b77a4cf1986efddd7.mesh"
+
+[deps]
+
+files=["res://.godot/imported/track-striped-narrow-straight-skew-left.obj-fccbfea2ce787a8b77a4cf1986efddd7.mesh"]
+
+source_file="res://assests/OBJ format/track-striped-narrow-straight-skew-left.obj"
+dest_files=["res://.godot/imported/track-striped-narrow-straight-skew-left.obj-fccbfea2ce787a8b77a4cf1986efddd7.mesh", "res://.godot/imported/track-striped-narrow-straight-skew-left.obj-fccbfea2ce787a8b77a4cf1986efddd7.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c5jjg25k1sofp"
+path="res://.godot/imported/supports-diagonal.obj-c9ce376e59c61c68ffaf680f74207b3f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/supports-diagonal.obj-c9ce376e59c61c68ffaf680f74207b3f.mesh"]
+
+source_file="res://assests/OBJ format/supports-diagonal.obj"
+dest_files=["res://.godot/imported/supports-diagonal.obj-c9ce376e59c61c68ffaf680f74207b3f.mesh", "res://.godot/imported/supports-diagonal.obj-c9ce376e59c61c68ffaf680f74207b3f.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

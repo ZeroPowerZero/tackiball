@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bmqeg3yxactbq"
+path="res://.godot/imported/track-road-wide-straight-skew-right-side.obj-aef77a385cfb2575e408ee0c552b4399.mesh"
+
+[deps]
+
+files=["res://.godot/imported/track-road-wide-straight-skew-right-side.obj-aef77a385cfb2575e408ee0c552b4399.mesh"]
+
+source_file="res://assests/OBJ format/track-road-wide-straight-skew-right-side.obj"
+dest_files=["res://.godot/imported/track-road-wide-straight-skew-right-side.obj-aef77a385cfb2575e408ee0c552b4399.mesh", "res://.godot/imported/track-road-wide-straight-skew-right-side.obj-aef77a385cfb2575e408ee0c552b4399.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

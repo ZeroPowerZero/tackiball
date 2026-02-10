@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b6esqxbxbsdir"
+path="res://.godot/imported/track-striped-narrow-straight-hill-complete.obj-3db5749af9545d23923d5cb38ce51106.mesh"
+
+[deps]
+
+files=["res://.godot/imported/track-striped-narrow-straight-hill-complete.obj-3db5749af9545d23923d5cb38ce51106.mesh"]
+
+source_file="res://assests/OBJ format/track-striped-narrow-straight-hill-complete.obj"
+dest_files=["res://.godot/imported/track-striped-narrow-straight-hill-complete.obj-3db5749af9545d23923d5cb38ce51106.mesh", "res://.godot/imported/track-striped-narrow-straight-hill-complete.obj-3db5749af9545d23923d5cb38ce51106.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
