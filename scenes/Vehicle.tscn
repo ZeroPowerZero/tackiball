@@ -44,8 +44,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_jcu2q")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_uud4n"]
-points = PackedVector3Array(0.2625, 0.29701936, -0.07502937, 0.24996084, 0.4249804, 0.4375, 0.2625, 0.22204873, -0.07502937, 0.2625, 0.29701936, -0.12504894, -0.25001222, 0.4249804, 0.4375, 0.24996084, 0.3624755, 0.4375, 0.24996084, 0.4249804, 0.33746088, 0.13746819, 0.45, 0.12496328, 0.24996084, 0.08748042, 0.3749755, 0.24996084, 0.03854248, 0.29986054, 0.24996084, 0.028587509, 0.2757929, 0.24996084, 0.02519577, 0.24992657, 0.2625, 0.22204873, -0.12504894, 0.2625, 0.27204385, -0.15005872, 0.24996084, 0.2124902, -0.37506118, 0.1624951, 0.4249804, -0.088219464, -0.25001222, 0.3624755, 0.4375, -0.13751957, 0.45, 0.12496328, -0.25001222, 0.4249804, 0.33746088, -0.2625, 0.29701936, -0.07502937, 0.18747064, 0.08748042, 0.4375, 0.23166603, 0.08748042, 0.41917092, 0.13746819, 0.45, -0.07905492, 0.22498533, 0.016738448, 0.31245106, 0.22498533, 0.004228661, 0.28230226, 0.22498533, 0, 0.24992657, 0.24996084, 0.02519577, -0.25001222, 0.24996084, 0.028587509, -0.27587852, 0.24996084, 0.03854248, -0.29994616, 0.24996084, 0.08748042, -0.37506118, 0.2625, 0.24702427, -0.15005872, 0.23166603, 0.2124902, -0.41925657, -0.18752202, 0.08748042, 0.4375, -0.2625, 0.22204873, -0.07502937, -0.25001222, 0.08748042, 0.3749755, -0.2317174, 0.08748042, 0.41917092, -0.13751957, 0.45, -0.07905492, -0.16254649, 0.4249804, -0.088219464, -0.2625, 0.29701936, -0.12504894, 0.1624951, 0.28746083, -0.37506118, -0.2250367, 0.016738448, 0.31245106, -0.2250367, 0.004228661, 0.28230226, -0.2250367, 0, 0.24992657, 0.22498533, 0, -0.25001222, 0.22498533, 0.004228661, -0.2823879, 0.22498533, 0.016738448, -0.31253672, 0.23166603, 0.08748042, -0.41925657, 0.18747064, 0.2124902, -0.4375, -0.2625, 0.22204873, -0.12504894, -0.25001222, 0.02519577, 0.24992657, -0.25001222, 0.028587509, 0.2757929, -0.25001222, 0.03854248, 0.29986054, -0.16254649, 0.28746083, -0.37506118, -0.2317174, 0.2124902, -0.41925657, -0.25001222, 0.2124902, -0.37506118, -0.2625, 0.27204385, -0.15005872, -0.2250367, 0, -0.25001222, -0.2250367, 0.004228661, -0.2823879, -0.2250367, 0.016738448, -0.31253672, 0.18747064, 0.08748042, -0.4375, -0.18752202, 0.2124902, -0.4375, -0.2625, 0.24702427, -0.15005872, -0.25001222, 0.08748042, -0.37506118, -0.25001222, 0.03854248, -0.29994616, -0.25001222, 0.028587509, -0.27587852, -0.25001222, 0.02519577, -0.25001222, -0.2317174, 0.08748042, -0.41925657, -0.18752202, 0.08748042, -0.4375)
+[sub_resource type="BoxShape3D" id="BoxShape3D_1lm87"]
+size = Vector3(0.4, 0.2434375, 0.367)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_80lxd"]
 _surfaces = [{
@@ -193,60 +193,63 @@ properties/1/replication_mode = 1
 
 [node name="VehicleBody3D" type="VehicleBody3D"]
 collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_g2lsg")
 
 [node name="vehicle-racer" type="MeshInstance3D" parent="."]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 mesh = SubResource("ArrayMesh_jq86s")
-skeleton = NodePath("")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0.33510792, 0)
-shape = SubResource("ConvexPolygonShape3D_uud4n")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0.55, 0)
+shape = SubResource("BoxShape3D_1lm87")
 
 [node name="rf_vw" type="VehicleWheel3D" parent="."]
-transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 1.1, 0.5, -1.2)
+transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 0.75, 0.38, -0.75)
 use_as_steering = true
 
 [node name="wheel-fr" type="MeshInstance3D" parent="rf_vw"]
-transform = Transform3D(-5, 0, -7.54979e-07, 0, 5, 0, 7.54979e-07, 0, -5, 0, 0, 0)
+transform = Transform3D(-3, 0, -4.5298742e-07, 0, 3, 0, 4.5298742e-07, 0, -3, 0, 0, 0)
 mesh = SubResource("ArrayMesh_g8n1v")
 skeleton = NodePath("")
 
 [node name="lf_vw" type="VehicleWheel3D" parent="."]
-transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, -1.1, 0.5, -1.2)
+transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, -0.75, 0.38, -0.75)
 use_as_steering = true
 
 [node name="wheel-fl" type="MeshInstance3D" parent="lf_vw"]
-transform = Transform3D(-5, 0, -7.54979e-07, 0, 5, 0, 7.54979e-07, 0, -5, 0, 0, 0)
+transform = Transform3D(-3, 0, -4.5298742e-07, 0, 3, 0, 4.5298742e-07, 0, -3, 0, 0, 0)
 mesh = SubResource("ArrayMesh_uojue")
 skeleton = NodePath("")
 
 [node name="lb_vw" type="VehicleWheel3D" parent="."]
-transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, -1.1, 0.5, 1.2)
+transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, -0.75, 0.38, 0.75)
 use_as_traction = true
 
 [node name="wheel-bl" type="MeshInstance3D" parent="lb_vw"]
-transform = Transform3D(-5, 0, -7.54979e-07, 0, 5, 0, 7.54979e-07, 0, -5, 0, 0, 0)
+transform = Transform3D(-3, 0, -4.5298742e-07, 0, 3, 0, 4.5298742e-07, 0, -3, 0, 0, 0)
 mesh = SubResource("ArrayMesh_4uag7")
 skeleton = NodePath("")
 
 [node name="rb_vw" type="VehicleWheel3D" parent="."]
-transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 1.1, 0.5, 1.2)
+transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 0.75, 0.38, 0.75)
 use_as_traction = true
 
 [node name="wheel-br" type="MeshInstance3D" parent="rb_vw"]
-transform = Transform3D(-5, 0, -7.54979e-07, 0, 5, 0, 7.54979e-07, 0, -5, 0, 0, 0)
+transform = Transform3D(-3, 0, -4.5298742e-07, 0, 3, 0, 4.5298742e-07, 0, -3, 0, 0, 0)
 mesh = SubResource("ArrayMesh_bt736")
 skeleton = NodePath("")
 
 [node name="SpringArm3D" type="SpringArm3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48508316, 0)
-spring_length = 6.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+spring_length = 10.0
 script = ExtResource("3_vujux")
 
 [node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0513897, 6.7452297)
+
+[node name="GroundRay" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4674037, 0)
+target_position = Vector3(0, -0.6, 0)
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_ub8q0")

@@ -1,13 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://ckhymx2g1u8uo"]
+[gd_scene load_steps=8 format=3 uid="uid://ckhymx2g1u8uo"]
 
 [ext_resource type="PackedScene" uid="uid://caqymajifpsch" path="res://scenes/arena.tscn" id="1_0cso3"]
 [ext_resource type="Script" uid="uid://bqv7hete88lhv" path="res://scripts/multiplayer_spawner.gd" id="3_2lpho"]
+[ext_resource type="PackedScene" uid="uid://dol3ob50wvnfe" path="res://scenes/ball.tscn" id="4_0cso3"]
 [ext_resource type="PackedScene" uid="uid://6yhdtc6v8e8b" path="res://scenes/Vehicle.tscn" id="4_nakos"]
 
-[node name="map" type="Node3D"]
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_paxxb"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
 
-[node name="Node3D" parent="." instance=ExtResource("1_0cso3")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -2.4338312, 0, 0.1937561)
+[sub_resource type="Sky" id="Sky_4ag8t"]
+sky_material = SubResource("ProceduralSkyMaterial_paxxb")
+
+[sub_resource type="Environment" id="Environment_gldc4"]
+background_mode = 2
+sky = SubResource("Sky_4ag8t")
+tonemap_mode = 2
+glow_enabled = true
+glow_intensity = 1.03
+glow_bloom = 0.46
+
+[node name="map" type="Node3D"]
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
 _spawnable_scenes = PackedStringArray("uid://6yhdtc6v8e8b")
@@ -15,3 +28,16 @@ spawn_path = NodePath("..")
 spawn_limit = 5
 script = ExtResource("3_2lpho")
 player_scene = ExtResource("4_nakos")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_gldc4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_color = Color(1, 0.6117647, 1, 1)
+shadow_enabled = true
+
+[node name="Arena" parent="." instance=ExtResource("1_0cso3")]
+
+[node name="Ball" parent="." instance=ExtResource("4_0cso3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.807993, 0)
