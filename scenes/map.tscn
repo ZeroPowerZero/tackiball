@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://ckhymx2g1u8uo"]
+[gd_scene load_steps=9 format=3 uid="uid://ckhymx2g1u8uo"]
 
 [ext_resource type="PackedScene" uid="uid://caqymajifpsch" path="res://scenes/arena.tscn" id="1_0cso3"]
 [ext_resource type="Script" uid="uid://bqv7hete88lhv" path="res://scripts/multiplayer_spawner.gd" id="3_2lpho"]
 [ext_resource type="PackedScene" uid="uid://dol3ob50wvnfe" path="res://scenes/ball.tscn" id="4_0cso3"]
 [ext_resource type="PackedScene" uid="uid://6yhdtc6v8e8b" path="res://scenes/Vehicle.tscn" id="4_nakos"]
+[ext_resource type="PackedScene" uid="uid://bfu0b0e331grj" path="res://scenes/camera.tscn" id="5_2klcf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_paxxb"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -41,3 +42,5 @@ shadow_enabled = true
 
 [node name="Ball" parent="." instance=ExtResource("4_0cso3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.807993, 0)
+
+[node name="Camera" parent="." instance=ExtResource("5_2klcf")]

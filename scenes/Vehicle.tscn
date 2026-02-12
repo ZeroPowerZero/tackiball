@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://s3v7em1vu4se" path="res://scripts/vehicle_scripts/vehicle.gd" id="1_g2lsg"]
 [ext_resource type="Texture2D" uid="uid://cbl6gi6a01h82" path="res://assests/GLB format/Textures/colormap.png" id="2_1lm87"]
-[ext_resource type="Script" uid="uid://gfyrb27ux56g" path="res://scripts/camera_spring_arm.gd" id="3_vujux"]
 [ext_resource type="Script" uid="uid://ddivvlflxkrl4" path="res://scripts/vehicle_scripts/movement.gd" id="4_vujux"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bm8bw"]
@@ -47,6 +46,10 @@ shadow_mesh = SubResource("ArrayMesh_jcu2q")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1lm87"]
 size = Vector3(0.4, 0.2434375, 0.367)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1lm87"]
+height = 0.4
+radius = 0.1
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_80lxd"]
 _surfaces = [{
@@ -195,6 +198,7 @@ properties/1/replication_mode = 1
 [node name="VehicleBody3D" type="VehicleBody3D"]
 collision_layer = 2
 collision_mask = 3
+center_of_mass_mode = 1
 script = ExtResource("1_g2lsg")
 
 [node name="vehicle-racer" type="MeshInstance3D" parent="."]
@@ -205,6 +209,14 @@ mesh = SubResource("ArrayMesh_jq86s")
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0.55, 0)
 shape = SubResource("BoxShape3D_1lm87")
 
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(-1.7484555e-07, -4, 0, 4, -1.7484555e-07, 0, 0, 0, 4, 0, 0.46219796, -0.8061365)
+shape = SubResource("CylinderShape3D_1lm87")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(-1.7484555e-07, -4, 0, 4, -1.7484555e-07, 0, 0, 0, 4, 0, 0.46219796, 0.76678145)
+shape = SubResource("CylinderShape3D_1lm87")
+
 [node name="rf_vw" type="VehicleWheel3D" parent="."]
 transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 0.75, 0.38, -0.75)
 use_as_steering = true
@@ -212,7 +224,6 @@ use_as_steering = true
 [node name="wheel-fr" type="MeshInstance3D" parent="rf_vw"]
 transform = Transform3D(-3, 0, -4.5298742e-07, 0, 3, 0, 4.5298742e-07, 0, -3, 0, 0, 0)
 mesh = SubResource("ArrayMesh_g8n1v")
-skeleton = NodePath("")
 
 [node name="lf_vw" type="VehicleWheel3D" parent="."]
 transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, -0.75, 0.38, -0.75)
@@ -221,7 +232,6 @@ use_as_steering = true
 [node name="wheel-fl" type="MeshInstance3D" parent="lf_vw"]
 transform = Transform3D(-3, 0, -4.5298742e-07, 0, 3, 0, 4.5298742e-07, 0, -3, 0, 0, 0)
 mesh = SubResource("ArrayMesh_uojue")
-skeleton = NodePath("")
 
 [node name="lb_vw" type="VehicleWheel3D" parent="."]
 transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, -0.75, 0.38, 0.75)
@@ -230,7 +240,6 @@ use_as_traction = true
 [node name="wheel-bl" type="MeshInstance3D" parent="lb_vw"]
 transform = Transform3D(-3, 0, -4.5298742e-07, 0, 3, 0, 4.5298742e-07, 0, -3, 0, 0, 0)
 mesh = SubResource("ArrayMesh_4uag7")
-skeleton = NodePath("")
 
 [node name="rb_vw" type="VehicleWheel3D" parent="."]
 transform = Transform3D(-1, 0, 1.509958e-07, 0, 1, 0, -1.509958e-07, 0, -1, 0.75, 0.38, 0.75)
@@ -239,14 +248,6 @@ use_as_traction = true
 [node name="wheel-br" type="MeshInstance3D" parent="rb_vw"]
 transform = Transform3D(-3, 0, -4.5298742e-07, 0, 3, 0, 4.5298742e-07, 0, -3, 0, 0, 0)
 mesh = SubResource("ArrayMesh_bt736")
-skeleton = NodePath("")
-
-[node name="SpringArm3D" type="SpringArm3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-spring_length = 10.0
-script = ExtResource("3_vujux")
-
-[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
 
 [node name="GroundRay" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4674037, 0)
@@ -255,10 +256,9 @@ target_position = Vector3(0, -0.6, 0)
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
 replication_config = SubResource("SceneReplicationConfig_ub8q0")
 
-[node name="movement" type="Node" parent="." node_paths=PackedStringArray("body", "model", "ground_ray", "wheel_fl", "wheel_fr", "wheel_bl", "wheel_br")]
+[node name="movement" type="Node" parent="." node_paths=PackedStringArray("body", "ground_ray", "wheel_fl", "wheel_fr", "wheel_bl", "wheel_br")]
 script = ExtResource("4_vujux")
 body = NodePath("..")
-model = NodePath("../vehicle-racer")
 ground_ray = NodePath("../GroundRay")
 wheel_fl = NodePath("../lf_vw")
 wheel_fr = NodePath("../rf_vw")

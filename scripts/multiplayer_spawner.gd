@@ -6,15 +6,14 @@ extends MultiplayerSpawner
 func _ready() -> void:
 	if !multiplayer.is_server(): return
 	
-
 	multiplayer.peer_connected.connect(spawn_player)
 	spawn_player(multiplayer.get_unique_id())
 
-
+# it spawns the player
 func spawn_player(id: int) -> void:
 	if !multiplayer.is_server():
 		return
-
+	
 	var player = player_scene.instantiate()
 	player.name = str(id)
 	player.position = Vector3(
@@ -22,5 +21,5 @@ func spawn_player(id: int) -> void:
 		10,
 		randf_range(-4, 3)
 	)
-
+	
 	get_node(spawn_path).call_deferred("add_child", player)

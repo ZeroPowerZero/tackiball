@@ -24,6 +24,10 @@ config/icon="res://icon.svg"
 ServerSetup="*res://scripts/global_scripts/server_setup.gd"
 Global="*res://scripts/global_scripts/global.gd"
 
+[global_group]
+
+Camera=""
+
 [input]
 
 mouse_mode_change={
@@ -87,6 +91,7 @@ jump={
 
 common/physics_ticks_per_second=240
 3d/physics_engine="Jolt Physics"
+3d/default_gravity=18.0
 
 [rendering]
 
