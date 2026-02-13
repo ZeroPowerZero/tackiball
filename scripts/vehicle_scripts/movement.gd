@@ -34,7 +34,7 @@ extends Node
 @export_group("jump")
 @export var jump_impulse: float = 15.0
 @export var dodge_impulse: float = 10.0
-@export var dodge_spin_torque: float = 6.0
+@export var dodge_spin_torque: float = 9.5
 @export var dodge_window: float = 1.5
 
 @export_group("boost")

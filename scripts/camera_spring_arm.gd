@@ -6,6 +6,10 @@ extends SpringArm3D
 @export var offset: Vector3 = Vector3(0, 0.5, 0)
 var mouse_captured := true
 
+var quat: Quaternion
+var pitch: float = 0.0
+var yaw: float = 0.0
+
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -19,16 +23,21 @@ func _unhandled_input(event: InputEvent) -> void:
 		else:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
-	# Rotate camera only when mouse is captured
+	# Rotates camera with quaternions
 	if mouse_captured and event is InputEventMouseMotion:
-		rotate_y(-event.relative.x * mouse_sensibility)
+		var relative = event.relative * mouse_sensibility
 		
-		rotation.x = clamp(
-			rotation.x - event.relative.y * mouse_sensibility,
-			deg_to_rad(-70),
-			deg_to_rad(45)
-		)
+		pitch -= relative.y
+		yaw -= relative.x
+		
+		pitch = clampf(pitch, -1.38, 1.38)
+		
+		quat = Quaternion.from_euler(Vector3(pitch, yaw, 0))
 
 func _physics_process(delta: float) -> void:
 	if !player: return
 	position = position.lerp(player.position + offset, follow_speed * delta)
+	
+	# Make smooth rotations
+	var newquat = quaternion.slerp(quat, 10 * delta)
+	basis = Basis(newquat.normalized())
